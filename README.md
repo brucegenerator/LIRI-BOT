@@ -12,3 +12,23 @@ The results are Artist Name, Album Title, Song Title, and a link to a preview UR
 The second command the app take is 'movie-this' accesses the OMDB API defaults to Mr. Nobody if no argument is passed after the command. The results are Title, Year Released, Rating, Country, Language, Plot, Actors.
 
 The third command 'concert-this' returns Artist Name, Venue, Location and Date and Time of the event. If no argument is passed after the command it will default to the band Bad Religion.
+
+# Assets available
+
+There is included in the repo an assets folder containing screenshots of the app in functionality.
+
+# To Run the App
+The app is executed via the command line once you have navigated to the correct folder with the liri.js file
+
+Running 'npm i' will download the necessary modules for accessing the APIs
+
+Users can execute the commands via NodeJS with 'node liri <command here>'
+
+List of available commands:
+'spotify-this-song <string>'
+'movie-this <string>'
+'concert-this <string>'
+
+# Bugs/Known Issues
+The current state of the project does contain non-working code for a 'do-what-it-says' command which would read a relative local text file named 'random' and execute any of the three primary commands with a built in default search option. 
+
