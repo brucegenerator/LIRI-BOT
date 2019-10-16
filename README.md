@@ -28,7 +28,7 @@ The third command 'concert-this' returns Artist Name, Venue, Location and Date a
 ![movie-this Fight Club With Argument Passed](/assets/movie-this-fight-club.png)
 ![movie-this Fight Club With Argument Passed]
 ![movie-this No Argument](/assets/concert-this-result-default.png)
-![movie-this No Argument (defaults to a search for rock band Tool)]
+![movie-this No Argument (defaults to a search for rock band Bad Religion)]
 ![movie-this With Argument Passed](/assets/concert-this-result-ariana-grande.png)
 ![movie-this With Argument Passed]
 
