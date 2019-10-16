@@ -13,7 +13,10 @@ The second command the app take is 'movie-this' accesses the OMDB API defaults t
 
 The third command 'concert-this' returns Artist Name, Venue, Location and Date and Time of the event. If no argument is passed after the command it will default to the band Bad Religion.
 
-# Assets available
+# Screenshots of the app functionality
+![Spotify-this-song No Argument](/assets/spotify-this-song.png)
+![Spotify-this-song No Argument with results](/assets/spotify-this-song-result.png)
+![Spotify-this-song With Argument Passed](/assets/spotify-this-song-country-grammar.png)
 
 There is included in the repo an assets folder containing screenshots of the app in functionality.
 
