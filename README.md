@@ -14,22 +14,23 @@ The second command the app take is 'movie-this' accesses the OMDB API defaults t
 The third command 'concert-this' returns Artist Name, Venue, Location and Date and Time of the event. If no argument is passed after the command it will default to the band Bad Religion.
 
 # Screenshots of the app functionality
-Spotify-this-song No Argument
+
 ![Spotify-this-song No Argument](/assets/spotify-this-song.png)
-Spotify-this-song No Argument with results (defaults to a search for "The Sign")
+![Spotify-this-song No Argument]
 ![Spotify-this-song No Argument with results](/assets/spotify-this-song-result.png)
-Spotify-this-song With Argument Passed
+![Spotify-this-song No Argument with results (defaults to a search for "The Sign")Spotify-this-song No Argument]
 ![Spotify-this-song With Argument Passed](/assets/spotify-this-song-country-grammar.png)
-movie-this No Argument
+![Spotify-this-song With Argument Passed]
 ![movie-this No Argument](/assets/movie-this.png)
-movie-this-result No Argument with  (defaults to "Mr Nobody")
+![movie-this No Argument]
 ![movie-this-result No Argument with results](/assets/movie-this-result.png)
-movie-this Fight Club With Argument Passed
+![movie-this-result No Argument with  (defaults to "Mr Nobody")]
 ![movie-this Fight Club With Argument Passed](/assets/movie-this-fight-club.png)
-movie-this No Argument (defaults to a search for rock band Tool)
+![movie-this Fight Club With Argument Passed]
 ![movie-this No Argument](/assets/concert-this-result-default.png)
-movie-this With Argument Passed
+![movie-this No Argument (defaults to a search for rock band Tool)]
 ![movie-this With Argument Passed](/assets/concert-this-result-ariana-grande.png)
+![movie-this With Argument Passed]
 
 
 # To Run the App
