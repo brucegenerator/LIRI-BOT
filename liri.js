@@ -7,32 +7,35 @@ var axios = require("axios");
 var moment = require("moment");
 // for read & write
 var fs = require("fs");
-var query = process.argv[3];
+// v/ar query = process.argv[3];
 
 // Check Keys
 // console.log(keys);
-var option = process.argv[2];
+// var option = process.argv[2];
 // console.log(option);
 
 
 // Initialize Spotify client
 var spotify = new Spotify(keys.spotify);
-switch (option) {
-  case "movie-this":
-    movieThis(query);
-    break;
-  case "spotify-this-song":
-    spotifyCall(query);
-    break;
-  case "concert-this":
-    concertThis(query);
-    break;
-  case "do-what-it-says":
-    doWhatItSays();
-    break;
-  default:
-    console.log("LIRI DONT KNOW");
+
+function init(option = process.argv[2], query = process.argv.slice(3).join(" ")) {
+  switch (option) {
+    case "movie-this":
+      movieThis(query);
+      break;
+    case "spotify-this-song":
+      spotifyCall(query);
+      break;
+    case "concert-this":
+      concertThis(query);
+      break;
+    case "do-what-it-says":
+      doWhatItSays();
+      break;
+    default:
+      console.log("LIRI DONT KNOW");
   }
+}
 
 // FUNCTIONS
 var getArtistInfo = function (artist) {
@@ -41,7 +44,7 @@ var getArtistInfo = function (artist) {
 // SPOTIFY-THIS-SONG
 function spotifyCall(songName) {
   if (!songName) {
-    songName = "I want it that way";
+    songName = "The Sign";
   }
   spotify.search({ type: 'track', query: songName }, function (err, data) {
     if (err) {
@@ -68,8 +71,6 @@ function movieThis(movieName) {
     movieName = "Mr. Nobody";
   }
   var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
-  // // This line is just to help us debug against the actual URL.
-  // Creating a request with axios to the queryUrl
   axios.get(queryUrl).then(
     function (response) {
       if (!movieName) {
@@ -90,30 +91,33 @@ function movieThis(movieName) {
     }
   );
 }
-
-
 // CONCERT-THIS
-// Then run a request with axios to the BiT API with the artist specified
+
 function concertThis(artist) {
+  if (!artist) {
+    var artist = "Bad Religion";
+  }
   var bandsQueryUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
-  // // This line is just to help us debug against the actual URL.
-  // Creating a request with axios to the queryUrl
+
   axios.get(bandsQueryUrl).then(
     function (response) {
       console.log("_Upcoming Events_");
-      console.log("Artist: " + artist + "\nVenue: " + response.data[0].venue.name + "\nLocation: " + response.data[0].venue.country + "\nDate: " + response.data[0].datatime + "\nRock on dude!");
+      console.log(`
+      Artist: ${artist}
+      Venue: ${response.data[0].venue.name}
+      Location: ${response.data[0].venue.city + ", " + response.data[0].venue.region + ", " + response.data[0].venue.country}
+      Date: ${response.data[0].datetime}`);
     });
 }
-// DO-WHAT-IT-SAYS
+// DO - WHAT - IT - SAYS
 function doWhatItSays() {
   fs.readFile("random.txt", "utf8", function (error, data) {
-    var data = data.split(",");
-    for (var i = Math.floor(Math.random * 2) + 1; i < data.length; i++) {
-      console.log(data[i]);
-    };
-    if (error) {
-      return console.log(error);
-    }
+    console.log(data);
+    if (error) throw error;
+    var dataOne = data.split(",");
 
-  })
-}
+    init(dataOne[0], dataOne[1]);
+    
+  }) 
+  }
+  init();
